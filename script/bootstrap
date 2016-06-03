@@ -5,8 +5,8 @@ function bootstrap {
   source "$shome/script/profile"
 
   pkg ensure shells/bash
-
-  ln -nfs "$(which bash)" "$shome/bin/bash4"
+  mv -f "$PKG_HOME/install/bin/bash" "$PKG_HOME/install/bin/bash4"
+  rm -f "$shome/bin/bash4"
 }
 
 bootstrap
